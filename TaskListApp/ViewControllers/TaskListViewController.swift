@@ -63,7 +63,7 @@ final class TaskListViewController: UITableViewController {
         let saveAction = UIAlertAction(title: "Save", style: .default) { [unowned self] _ in
             guard let editedTaskTitle = alert.textFields?.first?.text else { return }
             task.title = editedTaskTitle
-
+    
             if task.title == "" {
                 storageManager.delete(task)
                 taskList.remove(at: indexPath.row)
